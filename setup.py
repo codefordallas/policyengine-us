@@ -7,10 +7,11 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name="policyengine-us",
-    version="0.230.1",
+    version="0.331.1",
     author="PolicyEngine",
     author_email="hello@policyengine.org",
     long_description=readme,
+    long_description_content_type="text/markdown",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: GNU Affero General Public License v3",
@@ -36,8 +37,8 @@ setup(
         "microdf_python",
         "pandas",
         "pathlib",
-        "policyengine-core>=1.12,<1.13",
-        "pytest==5.4.3",
+        "policyengine-core>=2.1,<3",
+        "pytest",
         "pytest-dependency",
         "pyyaml",
         "requests",
@@ -56,16 +57,18 @@ setup(
             "linecheck",
             "markupsafe",
             "plotly",
+            "pydata-sphinx-theme==0.13.1",
             "setuptools",
             "sphinx",
             "sphinx-argparse",
             "sphinx-math-dollar",
             "wheel",
             "yaml-changelog",
+            "survey-enhance",
         ],
     },
     # Windows CI requires Python 3.9.
-    python_requires=">=3.7,<3.10",
+    python_requires=">=3.7",
     entry_points={
         "console_scripts": [
             "policyengine-us = policyengine_us.tools.cli:main",
